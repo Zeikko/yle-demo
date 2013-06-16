@@ -38,5 +38,9 @@
 		<?php echo $content; ?>
             </div>
         </div>
+	<footer class="footer">
+	    Tietolähteenä on käytetty <a target="_blank" href="http://blogit.yle.fi/kehitys-kehittyy/avointa-dataa-ylen-verkkopalveluiden-paivittaistavoittavuus" >Yleisradion tutkimusdataa</a>.
+	    
+	</footer>
     </body>
 </html>
