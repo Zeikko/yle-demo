@@ -6,11 +6,12 @@
 // CWebApplication properties can be configured here.
 return array(
     'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
-    'name' => 'Game Dev Test',
+    'name' => 'Yle Dashboard',
     'preload' => array(
 	'log',
 	'bootstrap',
     ),
+    'language' => 'fi',
     // autoloading model and component classes
     'import' => array(
 	'application.models.*',

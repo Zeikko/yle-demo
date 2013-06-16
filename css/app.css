@@ -1,0 +1,8 @@
+.top-container {
+    margin-top: 50px;
+}
+
+#min, #max, #min2, #max2 {
+    width: 50px;
+    text-align: center;
+}

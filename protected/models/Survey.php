@@ -85,13 +85,38 @@ class Survey extends CActiveRecord
     {
 
 	$this->timestamp = strtotime(str_replace('klo', '', $this->timestamp));
-	
+
 	return parent::beforeValidate();
     }
-    
+
     public static function getTimestampFromCSV($columns)
     {
 	return strtotime(str_replace('klo', '', $columns[0]));
+    }
+
+    public function toArray()
+    {
+	return array(
+	    'timestamp' => intval($this->timestamp),
+	    'success' => intval($this->success),
+	    'recommend' => intval($this->recommend),
+	    'interest' => intval($this->interest),
+	    'users' => intval($this->users),
+	    'gender' => intval($this->gender),
+	    'dateOfBirth' => intval($this->date_of_birth),
+	    'website' => $this->website,
+	);
+    }
+    
+    public static function getAllWebsites() {
+	$sql = 'SELECT DISTINCT website FROM survey';
+        $command = Yii::app()->db->createCommand($sql);
+        $websites = $command->queryAll();
+	$rval = array();
+	foreach($websites as $website) {
+	    $rval[$website['website']] = $website['website'];
+	}
+	return $rval;
     }
 
 }

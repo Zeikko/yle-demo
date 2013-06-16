@@ -88,5 +88,15 @@ class Traffic extends CActiveRecord
     {
 	return $columns[4];
     }
+    
+    public function toArray() {
+	return array(
+	    'date' => intval($this->date),
+	    'expected' => intval($this->expected),
+	    'currentCount' => intval($this->currentcount),
+	    'average' => intval($this->average),
+	    'timestamp' => intval($this->timestamp),
+	);
+    }
 
 }
